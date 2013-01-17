@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+
+
+require './' + File.dirname(__FILE__) + '/../lib/weibo2/apidoc_generator'
+
+Weibo2::APIDocGenerator.get_api_doc!

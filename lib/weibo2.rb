@@ -15,3 +15,15 @@ require 'weibo2/interface/suggestions'
 require 'weibo2/interface/tags'
 require 'weibo2/interface/trends'
 require 'weibo2/interface/users'
+
+
+module Weibo2
+  class << self
+
+    def help(str)
+      regex = Regexp.new(str.split.map{ |s| Regexp.escape(s) }.join('.*'), 'i')
+
+      puts Config::API_DOC.select { |hsh| hsh[:url] =~ regex }
+    end
+  end
+end

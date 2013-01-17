@@ -138,6 +138,19 @@ module Weibo2
     #
     # APIs
     #
+    def api(str, params={}, &blk)
+      if hsh = Weibo2::Config::API_URL_HASH[str]
+        hsh = hsh[0]
+        method = case hsh[:http_verb]
+                 when /post/i; :post
+                 else;         :get
+                 end
+
+        token.request(method, str + '.json', params: params, &blk)
+      else
+        raise ArgumentError.new("Unsuppported API: #{str}")
+      end
+    end
     
     def account
       @account ||= Weibo2::Interface::Account.new(self)

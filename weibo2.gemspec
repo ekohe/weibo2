@@ -7,9 +7,9 @@ require "weibo2/version"
 Gem::Specification.new do |s|
   s.name        = "weibo2"
   s.version     = Weibo2::VERSION
-  s.authors     = ["Acenqiu"]
-  s.email       = ["acenqiu@gmail.com"]
-  s.homepage    = "https://github.com/acenqiu/weibo2"
+  s.authors     = ["Acenqiu", "Eli Wang"]
+  s.email       = ["acenqiu@gmail.com", "eli@ekohe.com"]
+  s.homepage    = "https://github.com/ekohe/weibo2"
   s.summary     = "A wrapper for Weibo OAuth2 API"
   s.description = "A wrapper for Weibo OAuth2 API"
 
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency "oauth2", "~> 0.8.0"
 
   s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "multi_json"
 end
